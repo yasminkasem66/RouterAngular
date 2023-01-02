@@ -1,6 +1,17 @@
-<button routerLink="home" routerLinkActive="active-class" mat-raised-button color="primary">Home</button>
-<button [routerLink]="[{outlets:{prdouctRoute:'products'}}]" routerLinkActive="active-class" mat-raised-button
-    color="primary">Products</button>
+<!-- "[{outlets:{prdouctRoute:'products'}}]"  -->
+<div class="container-fluid  ">
+    <div class="row">
+        <div class="col-3  "><router-outlet name="sidebar"></router-outlet></div>
 
-<router-outlet></router-outlet>
-<router-outlet name="prdouctRoute"></router-outlet>
+        <div class="col-8">
+            <button routerLink="" routerLinkActive="active-class" mat-raised-button color="primary">Home</button>
+            <button [routerLink]="['products']" routerLinkActive="active-class" mat-raised-button
+                color="primary">Products</button>
+            <button [routerLink]="[{outlets:{primary:'products',sidebar:'products'}}]" routerLinkActive="active-class"
+                mat-raised-button color="primary">Tooggle Products sidebar</button>
+
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+</div>
