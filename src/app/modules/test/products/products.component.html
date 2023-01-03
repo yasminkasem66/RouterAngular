@@ -1,1 +1,4 @@
-<p>products works!</p>
+<mat-nav-list>
+    <a mat-list-item [routerLink]="[product.id]" *ngFor="let product of products">{{ product.name }}</a>
+</mat-nav-list>
+<router-outlet></router-outlet>

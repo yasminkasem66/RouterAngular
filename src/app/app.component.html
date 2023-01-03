@@ -4,11 +4,13 @@
         <div class="col-3  "><router-outlet name="sidebar"></router-outlet></div>
 
         <div class="col-8">
+            <button (click)="login()" mat-raised-button color="primary">Login</button>
             <button routerLink="" routerLinkActive="active-class" mat-raised-button color="primary">Home</button>
-            <button [routerLink]="['products']" routerLinkActive="active-class" mat-raised-button
+            <button routerLink='products' routerLinkActive="active-class" mat-raised-button
                 color="primary">Products</button>
-            <button [routerLink]="[{outlets:{primary:'products',sidebar:'products'}}]" routerLinkActive="active-class"
-                mat-raised-button color="primary">Tooggle Products sidebar</button>
+            <button (click)="isProductSideBarOpen=!isProductSideBarOpen"
+                [routerLink]="[{outlets:{sidebar:  isProductSideBarOpen ?null: 'products'}}]  "
+                routerLinkActive="active-class" mat-raised-button color="primary">Tooggle Products sidebar</button>
 
             <router-outlet></router-outlet>
 
