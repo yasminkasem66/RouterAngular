@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent, outlet: 'prdouctRoute' },
   { path: 'product/:id', component: ProductDetailsComponent, outlet: 'prdouctRoute' },
   { path: '**', redirectTo: 'home' },
+
 ];
 
 @NgModule({
