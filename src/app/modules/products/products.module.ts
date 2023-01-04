@@ -7,7 +7,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductsSidebarComponent } from './products-sidebar/products-sidebar.component';
 import { HomeComponent } from './home/home.component';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { MaterialModule } from 'app/shared/material.module';
 
 
 @NgModule({

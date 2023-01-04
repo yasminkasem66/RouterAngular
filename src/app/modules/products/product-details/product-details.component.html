@@ -1,1 +1,13 @@
-<p>product-details works!</p>
+<p>Product Number -{{productId+1}} </p>
+
+<div class="mt-5">
+    <button (click)="nextBack(productId+1)" routerLinkActive="active-class" mat-raised-button
+        color="primary">Next</button>
+    <button (click)="nextBack(productId-1)" routerLinkActive="active-class" mat-raised-button
+        color="primary">Back</button>
+    <hr>
+    <button [routerLink]="['/products',productId+1]" routerLinkActive="active-class" mat-raised-button
+        color="primary">Next</button>
+    <button [routerLink]="['/products',productId-1]" routerLinkActive="active-class" mat-raised-button
+        color="primary">Back</button>
+</div>

@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ProductDetailsComponent } from 'src/app/modules/test/product-details/product-details.component';
 import { DOCUMENT } from '@angular/common';
+import { ProductDetailsComponent } from '@modules/products/product-details/product-details.component';
 
 export interface canComponentDeactivate {
   canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean
@@ -25,12 +25,12 @@ export class LogingGuard implements CanDeactivate<canComponentDeactivate> {
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    // if (window.confirm('upload in progress, are you sure you want to leave? ')) {
-    //    return true;
-    // }
-    // return component.canDeactive;
+    if (window.confirm('upload in progress, are you sure you want to leave? ')) {
+      return true;
+    }
+    return component.canDeactive;
 
-    return component.canDeactivate ? component.canDeactivate() : true
+    // return component.canDeactivate ? component.canDeactivate() : true
 
 
   }
